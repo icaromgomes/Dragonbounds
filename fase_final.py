@@ -41,7 +41,7 @@ def colisao_bola_fogo_personagem(bolas_de_fogo, sprite_atual, barras_de_hp_playe
                 return True
 
 
-def executar_fase_final(janela, teclado, player_sprites, player_hitbox_ataque, dragao_sprites, obstaculos_cenario):
+def executar_fase_final(janela, teclado, player_sprites, player_hitbox_ataque, dragao_sprites):
 
     # VARIÁVEIS RELACIONADAS AO PLAYER
     barras_de_hp_player = inicializar_barra_de_hp_player()
@@ -80,7 +80,7 @@ def executar_fase_final(janela, teclado, player_sprites, player_hitbox_ataque, d
     cronometro_colisao_dragao = 0
     cooldown_ataque_fisico_dragao = 0
 
-    fundo_mapa_final = Sprite("Imagem_FUNDO/fase_final.png")
+    fundo_mapa_final = Sprite("Imagem_FUNDO/fundoFASEFINAL.jpeg")
 
     while True:
         dt = janela.delta_time()
@@ -114,7 +114,7 @@ def executar_fase_final(janela, teclado, player_sprites, player_hitbox_ataque, d
         # 3. MOVIMENTAÇÃO DO PLAYER
         if estado_player != "ataque":
             # ADICIONADO: obstaculos_cenario no final da chamada
-            andando = movimentacao_player(sprite_atual, dt, janela, teclado, obstaculos_cenario)
+            andando = movimentacao_player(sprite_atual, dt, janela, teclado)
             if andando:
                 estado_player = "andar"
             else:
