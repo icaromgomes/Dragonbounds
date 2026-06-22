@@ -82,7 +82,7 @@ def movimentacao_inimigo(inimigos, player, dt, lista_obstaculos):
                     esqueleto.y = novo_y
 
 
-def movimentacao_player(personagem, dt, janela, teclado, lista_obstaculos):
+def movimentacao_player_fase1(personagem, dt, janela, teclado, lista_obstaculos):
     vel_x = 200 * dt
     vel_y = 200 * dt
     andando = False
@@ -127,6 +127,33 @@ def movimentacao_player(personagem, dt, janela, teclado, lista_obstaculos):
             if personagem.collided(obstaculo):
                 personagem.y = pos_anterior_y
                 break
+
+    return andando
+
+def movimentacao_player(personagem, dt, janela, teclado):
+    vel_x = 200 * dt
+    vel_y = 200 * dt
+    andando = False
+
+    # Movimento para Direita
+    if teclado.key_pressed("right") and (personagem.x + personagem.width) <= janela.width:
+        personagem.x += vel_x
+        andando = True
+
+    # Movimento para Esquerda
+    if teclado.key_pressed("left") and personagem.x > 0:
+        personagem.x -= vel_x
+        andando = True
+
+    # Movimento para Baixo
+    if teclado.key_pressed("DOWN") and (personagem.y + personagem.height) <= janela.height:
+        personagem.y += vel_y
+        andando = True
+
+    # Movimento para Cima
+    if teclado.key_pressed("UP") and personagem.y > 0:
+        personagem.y -= vel_y
+        andando = True
 
     return andando
 

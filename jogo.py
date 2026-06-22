@@ -93,6 +93,9 @@ while True:
 
     elif tela == "fase final":
 
+        for spr in player_sprites.values():
+            spr.set_position((janela.width - spr.width)/2, (janela.height - spr.height)/2)
+
         # Inicializa os sprites do dragão, para não ter que inicializar antes do game loop
         dragao_sprites = {
         "andar": Sprite("Imagem_Personagens/dragao_andando.png"),
@@ -103,7 +106,7 @@ while True:
             spr.set_position((janela.width - spr.width)/2, 0)
 
         # Inicia a fase final e espera o retorno dela
-        tela = executar_fase_final(janela, teclado, player_sprites, player_hitbox_ataque, dragao_sprites, obstaculos_cenario)
+        tela = executar_fase_final(janela, teclado, player_sprites, player_hitbox_ataque, dragao_sprites)
 
     elif tela == "victoria":
         fundoVictoria.draw()
