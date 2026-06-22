@@ -13,7 +13,7 @@ def executar_fase(janela, teclado, mouse, player_sprites, player_hitbox_ataque, 
     
     cooldown_spawn_esqueleto = 1.0
     timer_spawn_esqueleto = 0
-    limite_inimigos_fase = 30
+    limite_inimigos_fase = 1
     inimigos_gerados = 0
     
     estado_player = "parado" 
@@ -72,7 +72,7 @@ def executar_fase(janela, teclado, mouse, player_sprites, player_hitbox_ataque, 
 
         # 3. MOVIMENTAÇÃO DO PLAYER
         if estado_player != "ataque":
-            andando = movimentacao_player(sprite_atual, dt, janela, teclado, obstaculos_cenario)
+            andando = movimentacao_player_fase1(sprite_atual, dt, janela, teclado, obstaculos_cenario)
             if andando:
                 estado_player = "andar"
             else:
