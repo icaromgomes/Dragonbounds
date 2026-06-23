@@ -13,7 +13,7 @@ def executar_fase(janela, teclado, mouse, player_sprites, player_hitbox_ataque, 
     
     cooldown_spawn_esqueleto = 0.7
     timer_spawn_esqueleto = 0
-    limite_inimigos_fase = 1
+    limite_inimigos_fase = 50
     inimigos_gerados = 0
     
     estado_player = "parado" 
