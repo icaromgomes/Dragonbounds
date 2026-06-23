@@ -32,7 +32,7 @@ def spawn_esqueleto(janela):
         
         
 def movimentacao_inimigo(inimigos, player, dt, lista_obstaculos):
-    vel = 150 * dt
+    vel = 170 * dt
     
     for esqueleto in inimigos:
         if isinstance(esqueleto, dict):

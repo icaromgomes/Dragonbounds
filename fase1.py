@@ -11,7 +11,7 @@ def executar_fase(janela, teclado, mouse, player_sprites, player_hitbox_ataque, 
     barras_de_hp_inimigos = []
     barras_de_hp_player = inicializar_barra_de_hp_player()
     
-    cooldown_spawn_esqueleto = 1.0
+    cooldown_spawn_esqueleto = 0.7
     timer_spawn_esqueleto = 0
     limite_inimigos_fase = 1
     inimigos_gerados = 0
@@ -19,7 +19,7 @@ def executar_fase(janela, teclado, mouse, player_sprites, player_hitbox_ataque, 
     estado_player = "parado" 
     tempo_ataque = 0.3
     cronometro_sprite_ataque = 0
-    cooldown_ataque = 1.0
+    cooldown_ataque = 1.3
     cronometro_ataque = 0
     pode_atacar = True
 

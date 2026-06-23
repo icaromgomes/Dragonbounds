@@ -48,7 +48,7 @@ def executar_fase_final(janela, teclado, player_sprites, player_hitbox_ataque, d
     estado_player = "parado" 
     tempo_ataque = 0.3
     cronometro_sprite_ataque = 0
-    cooldown_ataque = 1.0
+    cooldown_ataque = 1.3
     cronometro_ataque = 0
     pode_atacar = True
 
@@ -175,7 +175,7 @@ def executar_fase_final(janela, teclado, player_sprites, player_hitbox_ataque, d
             dragao_atual.x += vel_dragao * direcao_dragao * dt
 
             # Se bater nas bordas da janela, inverte a direção
-            if dragao_atual.x >= janela.width - dragao_atual.width or dragao_atual.x <= 0:
+            if dragao_atual.x >= janela.width - dragao_atual.width - 120 or dragao_atual.x <= 50:
                 direcao_dragao *= -1
 
             cronometro_dragao_andando += dt
