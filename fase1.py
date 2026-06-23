@@ -13,7 +13,7 @@ def executar_fase(janela, teclado, mouse, player_sprites, player_hitbox_ataque, 
     
     cooldown_spawn_esqueleto = 1.0
     timer_spawn_esqueleto = 0
-    limite_inimigos_fase = 30
+    limite_inimigos_fase = 1
     inimigos_gerados = 0
     
     estado_player = "parado" 
@@ -43,9 +43,9 @@ def executar_fase(janela, teclado, mouse, player_sprites, player_hitbox_ataque, 
         if teclado.key_pressed("ESC"):
             return "menu"
         
-        # Se o jogador morrer, volta para o menu
+        # GAME OVER
         if not barras_de_hp_player:
-            return "menu"
+            return "gameover"
 
         # Desenha o plano de fundo
         fundo_mapa.draw()

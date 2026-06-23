@@ -87,10 +87,11 @@ def executar_fase_final(janela, teclado, player_sprites, player_hitbox_ataque, d
         fundo_mapa_final.draw()
         if teclado.key_pressed("ESC"):
             return "menu"        
-        if barras_de_hp_player == []:
-            return "menu"
+        
+        # GAME OVER
+        if not barras_de_hp_player:
+            return "gameover"
 
-        # ----- PLAYER -------
         # 1. ESTADO E SPRITE DO PLAYER
         sprite_atual = player_sprites[estado_player]
 
@@ -147,7 +148,6 @@ def executar_fase_final(janela, teclado, player_sprites, player_hitbox_ataque, d
                 mostra_player = not mostra_player
                 cronometro_mostra = 0
 
-        # ----- DRAGAO -----
 
         # 1. ESTADO E SPRITE DO DRAGÃO
         dragao_atual = dragao_sprites[estado_dragao]
@@ -233,10 +233,3 @@ def executar_fase_final(janela, teclado, player_sprites, player_hitbox_ataque, d
             return "victoria"
 
         janela.update()
-
-
-
-
-
-        
-        

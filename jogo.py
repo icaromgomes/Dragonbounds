@@ -36,6 +36,8 @@ fundoPersonagem = GameImage("Imagem_FUNDO/FundoPersonagens.png")
 
 fundoVictoria = GameImage("Imagem_FUNDO/fundoVictoria.png")
 
+fundoGameOver = GameImage("Imagem_FUNDO/fundoGameOver.png")
+
 previews_personagens = {
     "arqueira": Sprite("Imagem_Personagens/arqueira_grande.png"),
     "anao": Sprite("Imagem_Personagens/anao_grande.png"),
@@ -114,6 +116,11 @@ while True:
         if teclado.key_pressed("ESC"):
             tela = "menu"
 
+    # Game Over
+    elif tela == "gameover":
+        fundoGameOver.draw()
 
+        if teclado.key_pressed("ESC"):
+            tela = "menu"
 
     janela.update()
